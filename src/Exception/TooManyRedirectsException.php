@@ -1,5 +1,5 @@
 <?php
-namespace GuzzleHttp\Exception;
+namespace ArmoniaGuzzleHttp\Exception;
 
 class TooManyRedirectsException extends RequestException
 {

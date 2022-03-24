@@ -1,5 +1,5 @@
 <?php
-namespace GuzzleHttp\Cookie;
+namespace ArmoniaGuzzleHttp\Cookie;
 
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;

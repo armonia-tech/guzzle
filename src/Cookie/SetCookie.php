@@ -1,5 +1,5 @@
 <?php
-namespace GuzzleHttp\Cookie;
+namespace ArmoniaGuzzleHttp\Cookie;
 
 /**
  * Set-Cookie object

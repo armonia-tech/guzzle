@@ -1,5 +1,5 @@
 <?php
-namespace GuzzleHttp\Cookie;
+namespace ArmoniaGuzzleHttp\Cookie;
 
 /**
  * Persists cookies in the client session

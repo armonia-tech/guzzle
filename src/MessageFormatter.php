@@ -1,5 +1,5 @@
 <?php
-namespace GuzzleHttp;
+namespace ArmoniaGuzzleHttp;
 
 use Psr\Http\Message\MessageInterface;
 use Psr\Http\Message\RequestInterface;

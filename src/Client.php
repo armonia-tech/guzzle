@@ -1,10 +1,10 @@
 <?php
-namespace GuzzleHttp;
+namespace ArmoniaGuzzleHttp;
 
-use GuzzleHttp\Cookie\CookieJar;
-use GuzzleHttp\Exception\InvalidArgumentException;
-use GuzzleHttp\Promise;
-use GuzzleHttp\Psr7;
+use ArmoniaGuzzleHttp\Cookie\CookieJar;
+use ArmoniaGuzzleHttp\Exception\InvalidArgumentException;
+use ArmoniaGuzzleHttp\Promise;
+use ArmoniaGuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
@@ -46,7 +46,7 @@ class Client implements ClientInterface
      * - handler: (callable) Function that transfers HTTP requests over the
      *   wire. The function is called with a Psr7\Http\Message\RequestInterface
      *   and array of transfer options, and must return a
-     *   GuzzleHttp\Promise\PromiseInterface that is fulfilled with a
+     *   ArmoniaGuzzleHttp\Promise\PromiseInterface that is fulfilled with a
      *   Psr7\Http\Message\ResponseInterface on success. "handler" is a
      *   constructor only option that cannot be overridden in per/request
      *   options. If no handler is provided, a default handler will be created
@@ -58,7 +58,7 @@ class Client implements ClientInterface
      *
      * @param array $config Client configuration settings.
      *
-     * @see \GuzzleHttp\RequestOptions for a list of available request options.
+     * @see \ArmoniaGuzzleHttp\RequestOptions for a list of available request options.
      */
     public function __construct(array $config = [])
     {
@@ -100,7 +100,7 @@ class Client implements ClientInterface
      * Asynchronously send an HTTP request.
      *
      * @param array $options Request options to apply to the given
-     *                       request and to the transfer. See \GuzzleHttp\RequestOptions.
+     *                       request and to the transfer. See \ArmoniaGuzzleHttp\RequestOptions.
      *
      * @return Promise\PromiseInterface
      */
@@ -119,7 +119,7 @@ class Client implements ClientInterface
      * Send an HTTP request.
      *
      * @param array $options Request options to apply to the given
-     *                       request and to the transfer. See \GuzzleHttp\RequestOptions.
+     *                       request and to the transfer. See \ArmoniaGuzzleHttp\RequestOptions.
      *
      * @return ResponseInterface
      * @throws GuzzleException
@@ -140,7 +140,7 @@ class Client implements ClientInterface
      *
      * @param string              $method  HTTP method
      * @param string|UriInterface $uri     URI object or string.
-     * @param array               $options Request options to apply. See \GuzzleHttp\RequestOptions.
+     * @param array               $options Request options to apply. See \ArmoniaGuzzleHttp\RequestOptions.
      *
      * @return Promise\PromiseInterface
      */
@@ -172,7 +172,7 @@ class Client implements ClientInterface
      *
      * @param string              $method  HTTP method.
      * @param string|UriInterface $uri     URI object or string.
-     * @param array               $options Request options to apply. See \GuzzleHttp\RequestOptions.
+     * @param array               $options Request options to apply. See \ArmoniaGuzzleHttp\RequestOptions.
      *
      * @return ResponseInterface
      * @throws GuzzleException
@@ -335,7 +335,7 @@ class Client implements ClientInterface
      * The URI of the request is not modified and the request options are used
      * as-is without merging in default options.
      *
-     * @param array $options See \GuzzleHttp\RequestOptions.
+     * @param array $options See \ArmoniaGuzzleHttp\RequestOptions.
      *
      * @return Promise\PromiseInterface
      */
@@ -404,7 +404,7 @@ class Client implements ClientInterface
         }
 
         if (isset($options['json'])) {
-            $options['body'] = \GuzzleHttp\json_encode($options['json']);
+            $options['body'] = \ArmoniaGuzzleHttp\json_encode($options['json']);
             unset($options['json']);
             // Ensure that we don't have the header in different case and set the new value.
             $options['_conditional'] = Psr7\_caseless_remove(['Content-Type'], $options['_conditional']);
