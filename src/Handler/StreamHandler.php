@@ -5,7 +5,7 @@ use ArmoniaGuzzleHttp\Exception\ConnectException;
 use ArmoniaGuzzleHttp\Exception\RequestException;
 use ArmoniaGuzzleHttp\Promise\FulfilledPromise;
 use ArmoniaGuzzleHttp\Promise\PromiseInterface;
-use ArmoniaGuzzleHttp\Psr7;
+use GuzzleHttp\Psr7;
 use ArmoniaGuzzleHttp\TransferStats;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;

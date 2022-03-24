@@ -4,7 +4,7 @@ namespace ArmoniaGuzzleHttp;
 use ArmoniaGuzzleHttp\Cookie\CookieJarInterface;
 use ArmoniaGuzzleHttp\Exception\RequestException;
 use ArmoniaGuzzleHttp\Promise\RejectedPromise;
-use ArmoniaGuzzleHttp\Psr7;
+use GuzzleHttp\Psr7;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 

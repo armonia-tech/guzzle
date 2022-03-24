@@ -3,7 +3,7 @@ namespace ArmoniaGuzzleHttp;
 
 use ArmoniaGuzzleHttp\Promise\PromiseInterface;
 use ArmoniaGuzzleHttp\Promise\RejectedPromise;
-use ArmoniaGuzzleHttp\Psr7;
+use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 

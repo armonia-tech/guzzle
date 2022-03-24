@@ -2,7 +2,7 @@
 namespace ArmoniaGuzzleHttp;
 
 use ArmoniaGuzzleHttp\Promise\PromiseInterface;
-use ArmoniaGuzzleHttp\Psr7;
+use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 
 /**

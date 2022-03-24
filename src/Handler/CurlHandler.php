@@ -1,7 +1,7 @@
 <?php
 namespace ArmoniaGuzzleHttp\Handler;
 
-use ArmoniaGuzzleHttp\Psr7;
+use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 
 /**

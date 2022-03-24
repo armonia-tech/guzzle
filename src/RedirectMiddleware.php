@@ -4,7 +4,7 @@ namespace ArmoniaGuzzleHttp;
 use ArmoniaGuzzleHttp\Exception\BadResponseException;
 use ArmoniaGuzzleHttp\Exception\TooManyRedirectsException;
 use ArmoniaGuzzleHttp\Promise\PromiseInterface;
-use ArmoniaGuzzleHttp\Psr7;
+use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;

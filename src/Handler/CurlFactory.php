@@ -4,8 +4,8 @@ namespace ArmoniaGuzzleHttp\Handler;
 use ArmoniaGuzzleHttp\Exception\ConnectException;
 use ArmoniaGuzzleHttp\Exception\RequestException;
 use ArmoniaGuzzleHttp\Promise\FulfilledPromise;
-use ArmoniaGuzzleHttp\Psr7;
-use ArmoniaGuzzleHttp\Psr7\LazyOpenStream;
+use GuzzleHttp\Psr7;
+use GuzzleHttp\Psr7\LazyOpenStream;
 use ArmoniaGuzzleHttp\TransferStats;
 use Psr\Http\Message\RequestInterface;
 
@@ -379,7 +379,7 @@ class CurlFactory implements CurlFactoryInterface
         if (isset($options['sink'])) {
             $sink = $options['sink'];
             if (!is_string($sink)) {
-                $sink = \ArmoniaGuzzleHttp\Psr7\stream_for($sink);
+                $sink = \GuzzleHttp\Psr7\stream_for($sink);
             } elseif (!is_dir(dirname($sink))) {
                 // Ensure that the directory exists before failing in curl.
                 throw new \RuntimeException(sprintf(
