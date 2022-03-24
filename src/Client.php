@@ -3,6 +3,7 @@ namespace ArmoniaGuzzleHttp;
 
 use ArmoniaGuzzleHttp\Cookie\CookieJar;
 use ArmoniaGuzzleHttp\Exception\InvalidArgumentException;
+use ArmoniaGuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Promise;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
@@ -399,7 +400,7 @@ class Client implements ClientInterface
         }
 
         if (isset($options['multipart'])) {
-            $options['body'] = new Psr7\MultipartStream($options['multipart']);
+            $options['body'] = new MultipartStream($options['multipart']);
             unset($options['multipart']);
         }
 
@@ -470,7 +471,7 @@ class Client implements ClientInterface
         }
 
         $request = Psr7\modify_request($request, $modify);
-        if ($request->getBody() instanceof Psr7\MultipartStream) {
+        if ($request->getBody() instanceof MultipartStream) {
             // Use a multipart/form-data POST if a Content-Type is not set.
             // Ensure that we don't have the header in different case and set the new value.
             $options['_conditional'] = Psr7\_caseless_remove(['Content-Type'], $options['_conditional']);
