@@ -2,8 +2,8 @@
 namespace ArmoniaGuzzleHttp\Handler;
 
 use ArmoniaGuzzleHttp\Exception\InvalidArgumentException;
-use ArmoniaGuzzleHttp\Promise as P;
-use ArmoniaGuzzleHttp\Promise\Promise;
+use GuzzleHttp\Promise as P;
+use GuzzleHttp\Promise\Promise;
 use Psr\Http\Message\RequestInterface;
 
 /**

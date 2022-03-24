@@ -3,8 +3,8 @@ namespace ArmoniaGuzzleHttp\Handler;
 
 use ArmoniaGuzzleHttp\Exception\ConnectException;
 use ArmoniaGuzzleHttp\Exception\RequestException;
-use ArmoniaGuzzleHttp\Promise\FulfilledPromise;
-use ArmoniaGuzzleHttp\Promise\PromiseInterface;
+use GuzzleHttp\Promise\FulfilledPromise;
+use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7;
 use ArmoniaGuzzleHttp\TransferStats;
 use Psr\Http\Message\RequestInterface;
@@ -67,7 +67,7 @@ class StreamHandler
             $e = RequestException::wrapException($request, $e);
             $this->invokeStats($options, $request, $startTime, null, $e);
 
-            return \ArmoniaGuzzleHttp\Promise\rejection_for($e);
+            return \GuzzleHttp\Promise\rejection_for($e);
         }
     }
 
@@ -119,7 +119,7 @@ class StreamHandler
             } catch (\Exception $e) {
                 $msg = 'An error was encountered during the on_headers event';
                 $ex = new RequestException($msg, $request, $response, $e);
-                return \ArmoniaGuzzleHttp\Promise\rejection_for($ex);
+                return \GuzzleHttp\Promise\rejection_for($ex);
             }
         }
 

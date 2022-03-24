@@ -2,7 +2,7 @@
 namespace ArmoniaGuzzleHttp;
 
 use ArmoniaGuzzleHttp\Exception\GuzzleException;
-use ArmoniaGuzzleHttp\Promise\PromiseInterface;
+use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;

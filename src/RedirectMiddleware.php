@@ -3,7 +3,7 @@ namespace ArmoniaGuzzleHttp;
 
 use ArmoniaGuzzleHttp\Exception\BadResponseException;
 use ArmoniaGuzzleHttp\Exception\TooManyRedirectsException;
-use ArmoniaGuzzleHttp\Promise\PromiseInterface;
+use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;

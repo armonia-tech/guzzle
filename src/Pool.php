@@ -1,9 +1,9 @@
 <?php
 namespace ArmoniaGuzzleHttp;
 
-use ArmoniaGuzzleHttp\Promise\EachPromise;
-use ArmoniaGuzzleHttp\Promise\PromiseInterface;
-use ArmoniaGuzzleHttp\Promise\PromisorInterface;
+use GuzzleHttp\Promise\EachPromise;
+use GuzzleHttp\Promise\PromiseInterface;
+use GuzzleHttp\Promise\PromisorInterface;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -51,7 +51,7 @@ class Pool implements PromisorInterface
             $opts = [];
         }
 
-        $iterable = \ArmoniaGuzzleHttp\Promise\iter_for($requests);
+        $iterable = \GuzzleHttp\Promise\iter_for($requests);
         $requests = function () use ($iterable, $client, $opts) {
             foreach ($iterable as $key => $rfn) {
                 if ($rfn instanceof RequestInterface) {

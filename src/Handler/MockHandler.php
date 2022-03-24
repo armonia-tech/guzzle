@@ -3,8 +3,8 @@ namespace ArmoniaGuzzleHttp\Handler;
 
 use ArmoniaGuzzleHttp\Exception\RequestException;
 use ArmoniaGuzzleHttp\HandlerStack;
-use ArmoniaGuzzleHttp\Promise\PromiseInterface;
-use ArmoniaGuzzleHttp\Promise\RejectedPromise;
+use GuzzleHttp\Promise\PromiseInterface;
+use GuzzleHttp\Promise\RejectedPromise;
 use ArmoniaGuzzleHttp\TransferStats;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -91,8 +91,8 @@ class MockHandler implements \Countable
         }
 
         $response = $response instanceof \Exception
-            ? \ArmoniaGuzzleHttp\Promise\rejection_for($response)
-            : \ArmoniaGuzzleHttp\Promise\promise_for($response);
+            ? \GuzzleHttp\Promise\rejection_for($response)
+            : \GuzzleHttp\Promise\promise_for($response);
 
         return $response->then(
             function ($value) use ($request, $options) {
@@ -120,7 +120,7 @@ class MockHandler implements \Countable
                 if ($this->onRejected) {
                     call_user_func($this->onRejected, $reason);
                 }
-                return \ArmoniaGuzzleHttp\Promise\rejection_for($reason);
+                return \GuzzleHttp\Promise\rejection_for($reason);
             }
         );
     }

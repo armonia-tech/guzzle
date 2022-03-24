@@ -3,7 +3,7 @@ namespace ArmoniaGuzzleHttp\Handler;
 
 use ArmoniaGuzzleHttp\Exception\ConnectException;
 use ArmoniaGuzzleHttp\Exception\RequestException;
-use ArmoniaGuzzleHttp\Promise\FulfilledPromise;
+use GuzzleHttp\Promise\FulfilledPromise;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\LazyOpenStream;
 use ArmoniaGuzzleHttp\TransferStats;
@@ -90,7 +90,7 @@ class CurlFactory implements CurlFactoryInterface
      * @param EasyHandle           $easy
      * @param CurlFactoryInterface $factory Dictates how the handle is released
      *
-     * @return \ArmoniaGuzzleHttp\Promise\PromiseInterface
+     * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public static function finish(
         callable $handler,
@@ -168,7 +168,7 @@ class CurlFactory implements CurlFactoryInterface
         // If an exception was encountered during the onHeaders event, then
         // return a rejected promise that wraps that exception.
         if ($easy->onHeadersException) {
-            return \ArmoniaGuzzleHttp\Promise\rejection_for(
+            return \GuzzleHttp\Promise\rejection_for(
                 new RequestException(
                     'An error was encountered during the on_headers event',
                     $easy->request,
@@ -200,7 +200,7 @@ class CurlFactory implements CurlFactoryInterface
             ? new ConnectException($message, $easy->request, null, $ctx)
             : new RequestException($message, $easy->request, $easy->response, null, $ctx);
 
-        return \ArmoniaGuzzleHttp\Promise\rejection_for($error);
+        return \GuzzleHttp\Promise\rejection_for($error);
     }
 
     private function getDefaultConf(EasyHandle $easy)

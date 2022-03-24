@@ -3,7 +3,7 @@ namespace ArmoniaGuzzleHttp;
 
 use ArmoniaGuzzleHttp\Cookie\CookieJar;
 use ArmoniaGuzzleHttp\Exception\InvalidArgumentException;
-use ArmoniaGuzzleHttp\Promise;
+use GuzzleHttp\Promise;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -46,7 +46,7 @@ class Client implements ClientInterface
      * - handler: (callable) Function that transfers HTTP requests over the
      *   wire. The function is called with a Psr7\Http\Message\RequestInterface
      *   and array of transfer options, and must return a
-     *   ArmoniaGuzzleHttp\Promise\PromiseInterface that is fulfilled with a
+     *   GuzzleHttp\Promise\PromiseInterface that is fulfilled with a
      *   Psr7\Http\Message\ResponseInterface on success. "handler" is a
      *   constructor only option that cannot be overridden in per/request
      *   options. If no handler is provided, a default handler will be created

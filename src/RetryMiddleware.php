@@ -1,8 +1,8 @@
 <?php
 namespace ArmoniaGuzzleHttp;
 
-use ArmoniaGuzzleHttp\Promise\PromiseInterface;
-use ArmoniaGuzzleHttp\Promise\RejectedPromise;
+use GuzzleHttp\Promise\PromiseInterface;
+use GuzzleHttp\Promise\RejectedPromise;
 use GuzzleHttp\Psr7;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -110,7 +110,7 @@ class RetryMiddleware
                 null,
                 $reason
             )) {
-                return \ArmoniaGuzzleHttp\Promise\rejection_for($reason);
+                return \GuzzleHttp\Promise\rejection_for($reason);
             }
             return $this->doRetry($req, $options);
         };
