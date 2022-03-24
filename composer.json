@@ -1,6 +1,7 @@
 {
-    "name": "guzzlehttp/guzzle",
-    "description": "Guzzle is a PHP HTTP client library",
+    "name": "armonia-tech/armonia-guzzle",
+    "type": "library",
+    "description": "Guzzle is a PHP HTTP client library (ArmoniaTech Fork)",
     "keywords": [
         "framework",
         "http",
